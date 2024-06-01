@@ -30,9 +30,12 @@ const SearchForm = () => {
       if (values.number) params.number = values.number.replace(/-/g, '');
 
       try {
-        const response = await axios.get('https://contacts-back-ybzt.onrender.com/api/contact', {
-          params: params,
-        });
+        const response = await axios.get(
+          'https://contacts-back-ybzt.onrender.com/api/contact',
+          {
+            params: params,
+          }
+        );
         setSearch(response.data);
         setLoading(false);
         setStatus({ success: true });
@@ -49,6 +52,7 @@ const SearchForm = () => {
         }
         setStatus({ success: false });
         setLoading(false);
+        formik.resetForm();
       }
     },
   });

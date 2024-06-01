@@ -87,9 +87,9 @@ const AddContactForm = () => {
       {formik.touched.number && formik.errors.number ? (
         <ErorrText>{formik.errors.number}</ErorrText>
       ) : null}
-          <button type="submit">Add Contact</button>
-          
-          {loading && (<p>Loading...</p>)}
+      <button type="submit">Add Contact</button>
+
+      {loading && <p>Loading...</p>}
     </Form>
   );
 };
